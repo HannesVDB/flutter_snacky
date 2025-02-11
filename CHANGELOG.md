@@ -1,3 +1,9 @@
+# 0.5.7
+
+## Fix
+
+- Updated license
+
 # 0.5.6
 
 ## Fix
