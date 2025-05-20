@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snacky/src/util/extension/color_extensions.dart';
 
 class TouchFeedback extends StatelessWidget {
   final VoidCallback? onTap;
@@ -31,7 +32,7 @@ class TouchFeedback extends StatelessWidget {
         borderRadius: borderRadius,
         child: InkWell(
           onTap: onTap,
-          highlightColor: color?.withOpacity(0.5),
+          highlightColor: color?.withOpacityPercentage(0.5),
           borderRadius: borderRadius,
           child: child,
         ),

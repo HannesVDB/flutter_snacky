@@ -22,6 +22,8 @@ class SimpleSnackyBuilder extends SnackyBuilder {
   final IconData? Function(Snacky)? iconBuilder;
   final BoxBorder Function(Snacky)? borderBuilder;
   final TextStyle Function(Snacky, SimpleSnackyTextType)? textStyleBuilder;
+  final IconData? Function(Snacky)? closeIconBuilder;
+  final List<BoxShadow> Function(Snacky)? shadowBuilder;
   final bool disableInkwell;
 
   const SimpleSnackyBuilder({
@@ -30,6 +32,8 @@ class SimpleSnackyBuilder extends SnackyBuilder {
     this.iconBuilder,
     this.borderBuilder,
     this.textStyleBuilder,
+    this.shadowBuilder,
+    this.closeIconBuilder,
     this.margin = const EdgeInsets.all(16),
     this.padding = const EdgeInsets.symmetric(
       vertical: 16,
@@ -61,13 +65,15 @@ class SimpleSnackyBuilder extends SnackyBuilder {
                   color: _getBackgroundColor(snacky),
                   border: _getBorder(snacky),
                   borderRadius: borderRadius,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(0, 2),
-                      blurRadius: 4,
-                    ),
-                  ],
+                  boxShadow: shadowBuilder != null
+                      ? shadowBuilder!.call(snacky)
+                      : const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(0, 2),
+                            blurRadius: 4,
+                          ),
+                        ],
                 ),
                 child: Row(
                   children: [
@@ -133,7 +139,7 @@ class SimpleSnackyBuilder extends SnackyBuilder {
                         child: Padding(
                           padding: const EdgeInsets.all(8),
                           child: Icon(
-                            Icons.close,
+                            closeIconBuilder?.call(snacky) ?? Icons.close,
                             color: _getTextStyle(
                                     snacky, SimpleSnackyTextType.title)
                                 .color,

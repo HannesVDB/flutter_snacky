@@ -1,3 +1,14 @@
+# 0.6.0
+
+## Feat
+
+- Make shadow configurable in the `SimpleSnackyBuilder`
+
+## Fix
+
+- Deprecated `color.withOpacity` by using our own `color.withOpacityPercentage` extension
+
+
 # 0.5.7
 
 ## Fix

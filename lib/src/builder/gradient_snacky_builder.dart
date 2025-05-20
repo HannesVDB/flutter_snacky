@@ -5,6 +5,7 @@ import 'package:snacky/src/controller/snacky_controller.dart';
 import 'package:snacky/src/model/cancelable_snacky.dart';
 import 'package:snacky/src/model/snacky.dart';
 import 'package:snacky/src/model/snacky_type.dart';
+import 'package:snacky/src/util/extension/color_extensions.dart';
 import 'package:snacky/src/widget/base_snacky_widget.dart';
 import 'package:snacky/src/widget/touch_feedback.dart';
 
@@ -250,7 +251,7 @@ class GradientSnackyBuilder extends SnackyBuilder {
                   center: const Alignment(0.1, 0),
                   colors: [
                     color,
-                    color.withOpacity(0),
+                    color.withOpacityPercentage(0),
                   ],
                   stops: const [0, 0.8],
                 ),
@@ -261,7 +262,7 @@ class GradientSnackyBuilder extends SnackyBuilder {
         ),
         Container(
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.05),
+            color: Colors.white.withOpacityPercentage(0.05),
             shape: BoxShape.circle,
           ),
           padding: const EdgeInsets.all(4),
