@@ -1,3 +1,9 @@
+# 0.6.2
+
+## Fix
+
+- Fix `OverlayState` null check
+
 # 0.6.1
 
 ## Fix

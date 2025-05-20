@@ -17,8 +17,14 @@ class SnackyController {
   ValueNotifier<CancelableSnacky?> get activeSnacky => _activeSnacky;
 
   void showMessage(Snacky Function(BuildContext) builder) {
+    final overlayState = _overlayState;
+    if (overlayState == null) {
+      debugPrint(
+          'SnackyController.showMessage: overlayState is null.\n\nDid you dispose your `SnackyConfiguratorWidget`? Make sure the `SnackyConfiguratorWidget` is configured at the top of your tree and is not removed when using the app.');
+      return;
+    }
     final cancelableSnacky = CancelableSnacky(
-      snacky: builder(_overlayState!.context),
+      snacky: builder(overlayState.context),
       onRemove: _onSnackyRemoved,
     );
     _snackies.add(cancelableSnacky);
@@ -37,8 +43,7 @@ class SnackyController {
     _activeSnacky.value = nextSnacky;
     notifyListeners();
     final entry = OverlayEntry(
-      builder: (context) =>
-          _listener?.buildSnacky(context, nextSnacky) ?? const SizedBox(),
+      builder: (context) => _listener?.buildSnacky(context, nextSnacky) ?? const SizedBox(),
     );
     _overlayState?.insert(entry);
     _entry = entry;
