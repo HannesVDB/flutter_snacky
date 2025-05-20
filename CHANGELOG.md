@@ -1,12 +1,8 @@
-# 0.6.2
+# 0.6.1 - 0.6.2
 
 ## Fix
 
 - Fix `OverlayState` null check
-
-# 0.6.1
-
-## Fix
 
 - github action to publish to github pages
 
