@@ -1,3 +1,9 @@
+# 0.6.1
+
+## Fix
+
+- github action to publish to github pages
+
 # 0.6.0
 
 ## Feat
@@ -7,7 +13,6 @@
 ## Fix
 
 - Deprecated `color.withOpacity` by using our own `color.withOpacityPercentage` extension
-
 
 # 0.5.7
 
