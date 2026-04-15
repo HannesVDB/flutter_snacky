@@ -53,6 +53,8 @@ class Snacky {
     this.transitionCurve = Curves.easeInOut,
     this.margin,
     this.location,
+    this.openUntillClosed = false,
+    this.canBeClosed = false,
   })  : title = '',
         _showDuration = showDuration,
         type = SnackyType.info,
@@ -60,7 +62,5 @@ class Snacky {
         leadingWidgetBuilder = null,
         trailingWidgetBuilder = null,
         bottomWidgetBuilder = null,
-        onTap = null,
-        canBeClosed = false,
-        openUntillClosed = false;
+        onTap = null;
 }
