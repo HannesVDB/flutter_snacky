@@ -153,9 +153,10 @@ class SnackyExampleScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                location: SnackyLocation.aboveTabBar,
+                location: SnackyLocation.bottom,
                 canBeClosed: true,
                 openUntillClosed: true,
+                padding: const EdgeInsets.only(bottom: kBottomNavigationBarHeight),
               );
               controller.showMessage((context) => snacky);
             },

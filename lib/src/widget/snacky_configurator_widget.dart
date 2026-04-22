@@ -56,7 +56,7 @@ class _SnackyConfiguratorWidgetState extends State<SnackyConfiguratorWidget>
         layoutConfig.getSnackyLocation(context, activeSnacky.snacky);
     return Builder(
       builder: (context) => Padding(
-        padding: snackyLocation.padding,
+        padding: activeSnacky.snacky.padding ?? EdgeInsets.zero,
         child: Stack(
           key: ValueKey(activeSnacky.hashCode),
           alignment: snackyLocation.alignment,

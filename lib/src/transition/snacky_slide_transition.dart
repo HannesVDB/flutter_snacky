@@ -60,8 +60,7 @@ class _SnackySlideTransitionState extends State<SnackySlideTransition>
             : 0;
     final beginY = widget.snackyLocation == SnackyLocation.top
         ? -1
-        : widget.snackyLocation == SnackyLocation.bottom ||
-                widget.snackyLocation == SnackyLocation.aboveTabBar
+        : widget.snackyLocation == SnackyLocation.bottom
             ? 1
             : 0;
     _offsetAnimation = Tween<Offset>(

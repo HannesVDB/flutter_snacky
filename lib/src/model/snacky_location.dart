@@ -24,24 +24,16 @@ enum SnackyLocation {
   bottomEnd(
     alignment: AlignmentDirectional.bottomEnd,
     isTop: false,
-  ),
-  aboveTabBar(
-    alignment: AlignmentDirectional.bottomCenter,
-    isTop: false,
-    padding: EdgeInsetsDirectional.only(bottom: kBottomNavigationBarHeight),
   );
 
   final AlignmentDirectional alignment;
 
   final bool isTop;
 
-  final EdgeInsetsDirectional padding;
-
   bool get isBottom => !isTop;
 
   const SnackyLocation({
     required this.alignment,
     required this.isTop,
-    this.padding = EdgeInsetsDirectional.zero,
   });
 }
