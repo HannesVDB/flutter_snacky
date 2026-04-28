@@ -1,5 +1,7 @@
 # 0.8.0
 
+## Feat
+
 - Added `padding` to `Snacky`
 - Added `openUntilClosed` and `canBeClosed` as an option for a `Snacky.widget`
 
